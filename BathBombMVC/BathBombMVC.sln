@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BathBombMVC", "BathBombMVC.csproj", "{E6857D48-F0B9-4B8B-8466-233FB4E31AAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BathBombMVC", "BathBombMVC.csproj", "{E6857D48-F0B9-4B8B-8466-233FB4E31AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BathBombsRazor", "..\BathBombsRazor\BathBombsRazor.csproj", "{71EA1197-DE9C-4AB5-AB95-78979CB511C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E6857D48-F0B9-4B8B-8466-233FB4E31AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6857D48-F0B9-4B8B-8466-233FB4E31AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6857D48-F0B9-4B8B-8466-233FB4E31AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71EA1197-DE9C-4AB5-AB95-78979CB511C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71EA1197-DE9C-4AB5-AB95-78979CB511C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71EA1197-DE9C-4AB5-AB95-78979CB511C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71EA1197-DE9C-4AB5-AB95-78979CB511C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
