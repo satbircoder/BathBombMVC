@@ -21,7 +21,24 @@ namespace BathBombMVC.DataAccess.Repository
         public void Update(Product obj)
 
         {
-        _db.Products.Update(obj);
+            var objFromDb = _db.Products.FirstOrDefault(p => p.Id == obj.Id);
+            if (objFromDb != null)
+            {
+                objFromDb.ProductName = obj.ProductName;
+                objFromDb.Description= obj.Description;
+                objFromDb.Size = obj.Size;
+                objFromDb.Flavour = obj.Flavour;
+                objFromDb.Price = obj.Price;
+                objFromDb.Price100 = obj.Price100;
+                objFromDb.Price50 = obj.Price50;
+                objFromDb.ListPrice = obj.ListPrice;
+                objFromDb.CategoryId= obj.CategoryId;
+                if(obj.ImageUrl!=null)
+                {
+                    objFromDb.ImageUrl = obj.ImageUrl;
+                }
+            }
+        //_db.Products.Update(obj);
         }
     }
 }

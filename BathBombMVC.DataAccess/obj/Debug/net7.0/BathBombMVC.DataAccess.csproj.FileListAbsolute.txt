@@ -1,8 +1,3 @@
-E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.csproj.AssemblyReference.cache
-E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.AssemblyInfoInputs.cache
-E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.AssemblyInfo.cs
-E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.csproj.CoreCompileInputs.cache
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.DataAccess.deps.json
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.DataAccess.runtimeconfig.json
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.DataAccess.dll
@@ -11,6 +6,11 @@ E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombM
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.Utility.dll
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.Models.pdb
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\bin\Debug\net7.0\BathBombMVC.Utility.pdb
+E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.csproj.AssemblyReference.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.AssemblyInfoInputs.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.AssemblyInfo.cs
+E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.csproj.CoreCompileInputs.cache
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.csproj.CopyComplete
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\BathBombMVC.DataAccess.dll
 E:\Diploma\Personal\MVCProject\BathBombMVC.DataAccess\obj\Debug\net7.0\refint\BathBombMVC.DataAccess.dll
