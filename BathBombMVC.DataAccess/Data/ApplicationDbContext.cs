@@ -14,7 +14,11 @@ namespace BathBombMVC.DataAccess.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +27,29 @@ namespace BathBombMVC.DataAccess.Data
                 new Category {Id = 1, Name="Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "Scifi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
+                );
+            modelBuilder.Entity<Company>().HasData(
+                new Company { Id = 1, 
+                    Name = "Tech Solution", 
+                    StreetAddress="123 Main St",
+                    City="Perth",PostalCode="6000",
+                    State="WA",PhoneNumber="089547820" },
+                new Company { Id = 2,
+                    Name = "Vivid Box",
+                    StreetAddress = "100 ST george terrace",
+                    City = "Perth",
+                    PostalCode = "6000",
+                    State = "WA",
+                    PhoneNumber = "089547822"
+                },
+                new Company { Id = 3,
+                    Name = "Rider Supplies",
+                    StreetAddress = "13 Lester Drive",
+                    City = "Perth",
+                    PostalCode = "6108",
+                    State = "WA",
+                    PhoneNumber = "089547823"
+                }
                 );
             modelBuilder.Entity<Product>().HasData(
                 new Product

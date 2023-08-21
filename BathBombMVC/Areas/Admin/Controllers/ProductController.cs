@@ -2,12 +2,16 @@
 using BathBombMVC.DataAccess.Repository.IRepository;
 using BathBombMVC.Models;
 using BathBombMVC.Models.ViewModels;
+using BathBombMVC.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data;
 
 namespace BathBombMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
