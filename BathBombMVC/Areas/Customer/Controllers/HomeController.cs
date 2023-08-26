@@ -40,12 +40,14 @@ namespace BathBombMVC.Areas.Customer.Controllers
         [Authorize]
         public IActionResult Details(ShoppingCart shoppingCart)
         {
+            shoppingCart.Id = 0;
            var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId= userId;
+            
             ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
             u.ProductId == shoppingCart.ProductId);
-            if(cartFromDb == null)
+            if(cartFromDb != null)
             {
                 //shooping cart already exists
                 cartFromDb.Count += shoppingCart.Count;
