@@ -1,0 +1,12 @@
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\bin\Release\net7.0\BathBombMVC.Models.deps.json
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\bin\Release\net7.0\BathBombMVC.Models.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\bin\Release\net7.0\BathBombMVC.Models.pdb
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.csproj.AssemblyReference.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.AssemblyInfoInputs.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.AssemblyInfo.cs
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.csproj.CoreCompileInputs.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\refint\BathBombMVC.Models.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\BathBombMVC.Models.pdb
+E:\Diploma\Personal\MVCProject\BathBombMVC.Models\obj\Release\net7.0\ref\BathBombMVC.Models.dll

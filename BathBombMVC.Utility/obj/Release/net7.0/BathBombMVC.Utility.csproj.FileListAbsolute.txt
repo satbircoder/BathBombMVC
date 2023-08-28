@@ -1,0 +1,12 @@
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\bin\Release\net7.0\BathBombMVC.Utility.deps.json
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\bin\Release\net7.0\BathBombMVC.Utility.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\bin\Release\net7.0\BathBombMVC.Utility.pdb
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.csproj.AssemblyReference.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.AssemblyInfoInputs.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.AssemblyInfo.cs
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.csproj.CoreCompileInputs.cache
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\refint\BathBombMVC.Utility.dll
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\BathBombMVC.Utility.pdb
+E:\Diploma\Personal\MVCProject\BathBombMVC.Utility\obj\Release\net7.0\ref\BathBombMVC.Utility.dll
