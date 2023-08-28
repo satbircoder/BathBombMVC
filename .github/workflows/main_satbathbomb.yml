@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'satbathbomb'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C84824B78AF24813A9E5A4536CBEA147 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1EA77E860B540ACA203F40D641C5C6A }}
           package: .
