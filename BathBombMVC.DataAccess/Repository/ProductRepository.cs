@@ -33,12 +33,12 @@ namespace BathBombMVC.DataAccess.Repository
                 objFromDb.Price50 = obj.Price50;
                 objFromDb.ListPrice = obj.ListPrice;
                 objFromDb.CategoryId= obj.CategoryId;
-                if(obj.ImageUrl!=null)
-                {
-                    objFromDb.ImageUrl = obj.ImageUrl;
-                }
+                objFromDb.ProductImages = obj.ProductImages;
+                //if(obj.ImageUrl!=null)
+                //{
+                //    objFromDb.ImageUrl = obj.ImageUrl;
+                //}
             }
-        //_db.Products.Update(obj);
         }
     }
 }

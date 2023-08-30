@@ -47,14 +47,14 @@ namespace BathBombMVC.Areas.Admin.Controllers
             else
             {
                 //update
-                productVM.Product = _unitOfWork.Product.Get(u=>u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u=>u.Id == id,includeProperties: "ProductImages");
                 return View(productVM);
             }
                
             
         }
         [HttpPost]
-        public IActionResult Upsert(ProductVM productVM, IFormFile? file)
+        public IActionResult Upsert(ProductVM productVM, List<IFormFile> files)
         {
             //if (obj.ProductName == obj.DisplayOrder.ToString())
             //{
@@ -62,28 +62,7 @@ namespace BathBombMVC.Areas.Admin.Controllers
             //}
             if (ModelState.IsValid)
             {
-                string wweRootPath = _webHostEnvironment.WebRootPath;
-                if(file != null)
-                {
-                    string filename = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string productPath = Path.Combine(wweRootPath, @"images\product");
-                    if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
-                    {
-                        //deleting old image
-                        var oldImagePath = Path.Combine(wweRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
-                        if(System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
-
-                    using (var filestream = new FileStream(Path.Combine(productPath, filename), FileMode.Create))
-                    {
-                        file.CopyTo(filestream);
-                    }
-                    productVM.Product.ImageUrl = @"\images\product\" + filename;
-                }
-                if(productVM.Product.Id == 0)
+                if (productVM.Product.Id == 0)
                 {
                     _unitOfWork.Product.Add(productVM.Product);
                 }
@@ -92,8 +71,41 @@ namespace BathBombMVC.Areas.Admin.Controllers
                     _unitOfWork.Product.Update(productVM.Product);
                 }
                 _unitOfWork.Save();
-                TempData["success"] = "Product created successfully";
-                return RedirectToAction("Index", "Product");
+
+                string wweRootPath = _webHostEnvironment.WebRootPath;
+                if(files != null)
+                {
+                    foreach(IFormFile file in files)
+                    {
+                        string filename = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                        string productPath = @"images\products\product-" + productVM.Product.Id;
+                        string finalPath = Path.Combine(wweRootPath, productPath);
+
+                        if (!Directory.Exists(finalPath))
+                            Directory.CreateDirectory(finalPath);
+
+                            using (var filestream = new FileStream(Path.Combine(finalPath, filename), FileMode.Create))
+                            {
+                                file.CopyTo(filestream);
+                            }
+                            ProductImage productImage = new()
+                            {
+                            ImageUrl = @"\"+productPath+@"\"+filename,
+                            ProductId= productVM.Product.Id,
+                            };
+                            if(productVM.Product.ProductImages == null)
+                                productVM.Product.ProductImages = new List<ProductImage>(); 
+                            
+                            productVM.Product.ProductImages.Add(productImage);
+
+                    }
+                    _unitOfWork.Product.Update(productVM.Product);
+                    _unitOfWork.Save();
+                   
+                }
+               
+                TempData["success"] = "Product created/updated successfully";
+                return RedirectToAction("Index");
             }
             else
             {
@@ -107,40 +119,36 @@ namespace BathBombMVC.Areas.Admin.Controllers
             
         }
        
-        //public IActionResult Delete(int? id)
-        //{
-        //    if (id == null || id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Product productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
-        //    if (productFromDb == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(productFromDb);
-        //}
-        //[HttpPost, ActionName("Delete")]
-        //public IActionResult DeletePost(int? id)
-        //{
-        //    //if (obj.Name == obj.DisplayOrder.ToString())
-        //    //{
-        //    //    ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name.");
-        //    //}
-        //    Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
-        //    if (obj == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    _unitOfWork.Product.Remove(obj);
-        //    _unitOfWork.Save();
-        //    TempData["success"] = "Product Deleted successfully";
-        //    return RedirectToAction("Index", "Product");
-        //}
+        
+
+        public IActionResult DeleteImage(int imageId)
+        {
+            var imageToBeDeleted = _unitOfWork.ProductImage.Get(u=>u.Id == imageId);
+            int productId = imageToBeDeleted.ProductId;
+            if (imageToBeDeleted != null)
+            {
+                if (!string.IsNullOrEmpty(imageToBeDeleted.ImageUrl))
+                {
+                    var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath,
+                        imageToBeDeleted.ImageUrl.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+                _unitOfWork.ProductImage.Remove(imageToBeDeleted);
+                _unitOfWork.Save();
+                TempData["success"] = "Deleted Successfully";
+            }
+            return RedirectToAction(nameof(Upsert), new {id= productId });
+        }
+        
+
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
         {
+            
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return Json(new { data = objProductList });
         }
@@ -152,12 +160,21 @@ namespace BathBombMVC.Areas.Admin.Controllers
             {
                 return Json(new { success = false, message = "Error while deleting" });
             }
-            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath,
-                productToBeDeleted.ImageUrl.TrimStart('\\'));
-            if (System.IO.File.Exists(oldImagePath))
+          
+            string productPath = @"images\products\product-" + id;
+            string finalPath = Path.Combine(_webHostEnvironment.WebRootPath, productPath);
+
+            if (Directory.Exists(finalPath))
             {
-                System.IO.File.Delete(oldImagePath);
+                string[] filePaths = Directory.GetFiles(finalPath);
+                foreach (string filePath in filePaths)
+                {
+                    System.IO.File.Delete(filePath);
+                }
+                Directory.Delete(finalPath);
             }
+                
+
             _unitOfWork.Product.Remove(productToBeDeleted);
             _unitOfWork.Save();
             return Json(new {success=true, message = "Delete Successful" });

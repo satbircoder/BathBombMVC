@@ -31,14 +31,14 @@ namespace BathBombMVC.Areas.Customer.Controllers
                _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value).Count());
             }
 
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
             return View(productList);
         }
         public IActionResult Details(int id)
         {
             ShoppingCart cart = new()
             {
-                Product = _unitOfWork.Product.Get(u=>u.Id == id,includeProperties: "Category"),
+                Product = _unitOfWork.Product.Get(u=>u.Id == id,includeProperties: "Category,ProductImages"),
                 Count = 1,
                 ProductId= id
 

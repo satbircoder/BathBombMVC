@@ -251,10 +251,6 @@ namespace BathBombMVC.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
@@ -288,7 +284,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "Gaze at this ancient relic of blue steel, purple iris, and liquid gold foam",
                             Flavour = "Salted Caramel",
-                            ImageUrl = "",
                             ListPrice = 99.0,
                             Price = 90.0,
                             Price100 = 80.0,
@@ -302,7 +297,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "\"Wild\" is the perfect word to describe the hypnotic bath art this bath bomb creates.",
                             Flavour = "Cake Batter",
-                            ImageUrl = "",
                             ListPrice = 40.0,
                             Price = 30.0,
                             Price100 = 20.0,
@@ -316,7 +310,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "Don't worry, we understand your desire for artisanal and one of a kind products, and the Coffee Snob is just that.",
                             Flavour = "Fresh Coffee",
-                            ImageUrl = "",
                             ListPrice = 55.0,
                             Price = 50.0,
                             Price100 = 35.0,
@@ -330,7 +323,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Jam Donut has a white fizzy base with a hidden pink centre, topped with pink cocoa butter glaze, vegan sprinkles, and biodegradable silver glitter.",
                             Flavour = "Raspberry Jam",
-                            ImageUrl = "",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 55.0,
@@ -344,7 +336,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Fall asleep with the restful smell of lavender and warm tonka",
                             Flavour = " Lavender & Tonka",
-                            ImageUrl = "",
                             ListPrice = 30.0,
                             Price = 27.0,
                             Price100 = 20.0,
@@ -358,7 +349,6 @@ namespace BathBombMVC.DataAccess.Migrations
                             CategoryId = 3,
                             Description = "Apple Donut has a coral pink fizzy base, topped with white cocoa butter glaze, vegan sprinkles, and biodegradable gold glitter.",
                             Flavour = "Spiced Apple",
-                            ImageUrl = "",
                             ListPrice = 25.0,
                             Price = 23.0,
                             Price100 = 20.0,
@@ -366,6 +356,28 @@ namespace BathBombMVC.DataAccess.Migrations
                             ProductName = "Apple Donut",
                             Size = "220G BATH BOMB"
                         });
+                });
+
+            modelBuilder.Entity("BathBombMVC.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("BathBombMVC.Models.ShoppingCart", b =>
@@ -609,7 +621,6 @@ namespace BathBombMVC.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -669,6 +680,17 @@ namespace BathBombMVC.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BathBombMVC.Models.ProductImage", b =>
+                {
+                    b.HasOne("BathBombMVC.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BathBombMVC.Models.ShoppingCart", b =>
@@ -745,11 +767,14 @@ namespace BathBombMVC.DataAccess.Migrations
                 {
                     b.HasOne("BathBombMVC.Models.Company", "Company")
                         .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CompanyId");
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("BathBombMVC.Models.Product", b =>
+                {
+                    b.Navigation("ProductImages");
                 });
 #pragma warning restore 612, 618
         }

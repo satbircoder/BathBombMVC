@@ -22,3 +22,15 @@ C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Models\ob
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Models\obj\Debug\net7.0\refint\BathBombMVC.Models.dll
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.pdb
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Models\obj\Debug\net7.0\ref\BathBombMVC.Models.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\bin\Debug\net7.0\BathBombMVC.Models.deps.json
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\bin\Debug\net7.0\BathBombMVC.Models.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\bin\Debug\net7.0\BathBombMVC.Models.pdb
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.csproj.AssemblyReference.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.AssemblyInfoInputs.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.AssemblyInfo.cs
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.csproj.CoreCompileInputs.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\refint\BathBombMVC.Models.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\BathBombMVC.Models.pdb
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Models\obj\Debug\net7.0\ref\BathBombMVC.Models.dll

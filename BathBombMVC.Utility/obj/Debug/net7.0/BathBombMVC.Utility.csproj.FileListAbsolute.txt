@@ -22,3 +22,15 @@ C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Utility\o
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Utility\obj\Debug\net7.0\refint\BathBombMVC.Utility.dll
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.pdb
 C:\Users\satbi\Downloads\BathBombMVC-main\BathBombMVC-main\BathBombMVC.Utility\obj\Debug\net7.0\ref\BathBombMVC.Utility.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\bin\Debug\net7.0\BathBombMVC.Utility.deps.json
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\bin\Debug\net7.0\BathBombMVC.Utility.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\bin\Debug\net7.0\BathBombMVC.Utility.pdb
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.csproj.AssemblyReference.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.AssemblyInfoInputs.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.AssemblyInfo.cs
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.csproj.CoreCompileInputs.cache
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\refint\BathBombMVC.Utility.dll
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\BathBombMVC.Utility.pdb
+C:\Users\satbi\Desktop\MVCTest\BathBombMVC.Utility\obj\Debug\net7.0\ref\BathBombMVC.Utility.dll
